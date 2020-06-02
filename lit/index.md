@@ -6,7 +6,7 @@ footer:   "(C) 2020 Johan Hidding, Netherlands eScience Center"
 license:  "[Apache 2](https://www.apache.org/licenses/LICENSE-2.0)"
 ---
 
-# Examples
+# Demos
 These demos show how you can use Literate Programming to document your code.
 
 ``` {.dhall .bootstrap-card-deck}
@@ -56,6 +56,43 @@ in [ Card :: { title = "Chaotic Pendulum"
                            , content = "Chaotic Pendulum" }
              , image = Some "img/chaotic-pendulum-thumb.png"
              }
+   , Card :: { title = "LiteratePt"
+             , text =
+                ''
+                A translation of Kevin Beason's [SmallPt](https://www.kevinbeason.com/smallpt/), into literate **Rust**. This is global illumination path tracing in just under 400 lines of readable Rust.
+                ''
+             , image = Some "img/ptbox.png"
+             , link = Some { href = "https://jhidding.github.io/literatept/"
+                           , content = "LiteratePt" }
+             }
    ]
 ```
 
+# Real World examples
+These are examples of Entangled being used "in real life".
+
+``` {.dhall .bootstrap-card-deck}
+let Card = ./schema/Card.dhall
+in [ Card :: { title = "Guide: C++ to WASM"
+             , text =
+                ''
+                *by Stefan Verhoeven et al.*<br>
+                This guide teaches how to make C++ algorithms available as web applications.
+                As an example it takes the Newton-Raphson root finder algorithm.
+                ''
+             , link = Some { href = "https://nlesc-jcer.github.io/cpp2wasm/#/"
+                           , content = "C++2WASM" }
+             , image = Some "img/web-assembly-logo.svg"
+             }
+   , Card :: { title = "The Adhesion model"
+             , text =
+               ''
+               Presents a numerical code that models structure formation in the Universe
+               according to the Adhesion model. The model works by computing weighted Voronoi tessellations
+               using the [CGAL](https://cgal.org/) library for computational geometry.
+               ''
+             , link = Some { href = "https://jhidding.github.io/adhesion-code/"
+                           , content = "Adhesion Model"}
+             , image = Some "img/adhesion-code-thumb.jpg" }
+   ]
+```
