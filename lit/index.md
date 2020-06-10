@@ -65,6 +65,16 @@ in [ Card :: { title = "Chaotic Pendulum"
              , link = Some { href = "https://jhidding.github.io/literatept/"
                            , content = "LiteratePt" }
              }
+   , Card :: { title = "PlotLy"
+             , text =
+                ''
+                This demo shows how you can inject JavaScript code into the generated output.
+                This is great for plotting with D3, PlotLy, or three.js.
+                ''
+             , link = Some { href = "plotly.html"
+                           , content = "PlotLy" }
+             , image = Some "img/plotly.png"
+             }
    ]
 ```
 

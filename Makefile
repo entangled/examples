@@ -18,14 +18,15 @@
 #
 # You should list the Markdown sources here in the order that they should
 # appear.
-input_files := lit/index.md lit/slasher.md lit/99-bottles.md lit/hello-world.md
+input_files := lit/index.md lit/slasher.md lit/99-bottles.md lit/hello-world.md lit/plotly.md
 html_targets := $(input_files:lit/%.md=docs/%.html)
 
 # Arguments to Pandoc; these are reasonable defaults
 pandoc_args += --template bootstrap/template.html
-pandoc_args += --css css/mods.css
+pandoc_args += --css css/mods.css --css css/extra.css
 pandoc_args += -t html5 -s --mathjax --toc
 pandoc_args += --toc-depth 1
+pandoc_args += --filter pandoc-inject
 pandoc_args += --filter pandoc-bootstrap
 pandoc_args += --filter pandoc-citeproc
 pandoc_args += --filter pandoc-fignos
@@ -61,7 +62,7 @@ watch:
 
 watch-pandoc:
 	@while true; do \
-		inotifywait -e close_write bootstrap lit Makefile; \
+		inotifywait -e close_write bootstrap lit Makefile $(static_files); \
 		make site; \
 	done
 
