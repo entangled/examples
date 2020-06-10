@@ -64,4 +64,14 @@ Plotly.newPlot('myPlot', data, layout);
 });
 ```
 
-This functionality could be extended to other languages that compile to Javascript.
+To make sure PlotLy is loaded, you should add,
+
+```yaml
+header-includes: >
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+```
+
+to the meta-data header of your markdown.
+
+This functionality could potentially be extended to other languages that compile to Javascript.
+

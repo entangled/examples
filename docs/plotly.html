@@ -203,7 +203,11 @@ Plotly.newPlot('myPlot', data, layout);
 });
 </script>
 </div>
-<p>This functionality could be extended to other languages that compile to Javascript.</p>
+<p>To make sure PlotLy is loaded, you should add,</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">header-includes</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>        &lt;script src=&quot;https://cdn.plot.ly/plotly-latest.min.js&quot;&gt;&lt;/script&gt;</span></code></pre></div>
+<p>to the meta-data header of your markdown.</p>
+<p>This functionality could potentially be extended to other languages that compile to Javascript.</p>
 </div></main>
 
 <footer class="py-4 bg-dark text-white-50 footer"><div class="container">
